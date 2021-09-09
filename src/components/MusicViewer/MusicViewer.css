@@ -1,7 +1,12 @@
-table, td, th{
+table{
     border: 1px solid black;
+    width:100%
 }
 
 tr{
     border-spacing: 15px 10px;
+}
+
+tr:nth-child(even){
+    background-color: aqua;
 }
