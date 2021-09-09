@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import MusicViewer from './MusicViewer/MusicViewer';
+import './App.css'
+import CreateSong from './CreateSong/CreateSong';
 
 
 class App extends Component {
@@ -15,9 +17,12 @@ class App extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="mainBody">
                 <h1>Music Library Viewer</h1>
+                <hr/>
                 <MusicViewer />
+                <hr/>
+                <CreateSong />
             </div>
          );
     }

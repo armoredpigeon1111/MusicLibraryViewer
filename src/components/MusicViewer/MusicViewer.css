@@ -1,10 +1,14 @@
-table{
-    border: 1px solid black;
+table{   
     width:100%
 }
 
+th{
+    text-align: center;
+}
+
 tr{
-    border-spacing: 15px 10px;
+    text-align: center;
+    
 }
 
 tr:nth-child(even){
