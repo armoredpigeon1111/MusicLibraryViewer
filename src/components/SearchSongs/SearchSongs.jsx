@@ -60,7 +60,9 @@ class SearchSongs extends Component {
                     <button type="submit">Search</button>
                 </form>
 
-                {this.state.submitted ? (                    
+                {this.state.submitted ? (  
+                    <div>
+                    <h2>Search Results:</h2>                  
                    <table>
                     <thead>
                         <th>Title</th>
@@ -82,7 +84,9 @@ class SearchSongs extends Component {
                         );
                     })}
                 </table>
+                </div>
                 ):(console.log("Waiting for Search Term"))}
+                
 
             </div>
          );
