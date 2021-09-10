@@ -33,10 +33,15 @@ class SearchSongs extends Component {
                 song.artist.toLowerCase().includes(this.state.search.toLowerCase()) ||
                 song.album.toLowerCase().includes(this.state.search.toLowerCase()) ||
                 song.genre.toLowerCase().includes(this.state.search.toLowerCase()));
-            console.log(results);
-            this.state.results = results;
-            this.state.submitted = true;
-            this.setState({state: this.state});
+            if(results != ''){
+                console.log(results);
+                this.state.results = results;
+                this.state.submitted = true;
+                this.setState({state: this.state});
+            }else{
+                alert("no results");
+            }
+
         }
         catch{
             console.log("unable to search")

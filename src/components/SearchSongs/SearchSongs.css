@@ -1,5 +1,5 @@
 label{
- font-weight:bold;
+ 
 }
 
 input{
@@ -11,5 +11,7 @@ button{
 }
 
 body{
-    background-color: rgb(174, 199, 196);
+    background-color: rgb(19, 17, 17);
+    color: white;
+    font-family: copperplate, fantasy;
 }
