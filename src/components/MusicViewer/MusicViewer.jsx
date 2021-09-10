@@ -22,6 +22,15 @@ class MusicViewer extends Component {
         });
     }
 
+    async deleteSong(songID){
+        let response = await axios.delete('http://127.0.0.1:8000/music/' + songID);
+        console.log(response);
+        window.location.reload();
+        this.setState({
+            
+        });
+    }
+
     render() { 
         return ( 
             <table>
@@ -40,7 +49,7 @@ class MusicViewer extends Component {
                             <td>{song.album}</td>
                             <td>{song.release_date}</td>
                             <td>{song.genre}</td>
-                            <td><button>Delete</button></td>
+                            <td><button onClick ={()=> this.deleteSong(song.id)}>Delete</button></td>
                             
                         </tr>
                             
