@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './MusicViewer.css'
+import SearchSongs from '../SearchSongs/SearchSongs';
 
 class MusicViewer extends Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class MusicViewer extends Component {
 
     render() { 
         return ( 
+            <div>
             <table>
                 <thead>
                     <th>Title</th>
@@ -52,6 +54,8 @@ class MusicViewer extends Component {
                     );
                 })}
             </table>
+            <SearchSongs songs = {this.state.songs}/>
+            </div>
          );
     }
 }

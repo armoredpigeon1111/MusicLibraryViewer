@@ -24,7 +24,7 @@ class App extends Component {
                 <MusicViewer />
                 <hr/>
                 <CreateSong />
-                <SearchSongs />
+                
             </div>
          );
     }

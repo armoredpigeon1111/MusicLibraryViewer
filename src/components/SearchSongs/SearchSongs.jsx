@@ -1,27 +1,18 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import './SearchSongs.css'
+import reactDom from 'react-dom';
 
 class SearchSongs extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             search: '',
-            songs: []
+            results: [],
+            songs: props.songs
          }
     }
 
-    componentDidMount(){
-        this.getSongs();
-    }
-
-    async getSongs(){
-        let response = await axios.get('http://127.0.0.1:8000/music/');
-        console.log(response);
-        this.setState({
-            songs: response.data
-        });
-    }
 
     handleChange = (event) =>{
         this.setState({
@@ -35,7 +26,18 @@ class SearchSongs extends Component {
      }
 
      async searchSongs(){
-         console.log("Search Songs");
+
+        try{
+            const results = this.props.songs.filter(song => 
+                song.title.toLowerCase().includes(this.state.search.toLowerCase()) || 
+                song.artist.toLowerCase().includes(this.state.search.toLowerCase()) ||
+                song.genre.toLowerCase().includes(this.state.search.toLowerCase()));
+            console.log(results);
+        }
+        catch{
+            console.log("unable to search")
+        }
+
          
      }
 
@@ -45,11 +47,13 @@ class SearchSongs extends Component {
             <div>
                 <form onSubmit ={this.handleSubmit}>
                     <label>Search:</label>
-                    <input name="search" onChange={this.handleChange} value={this.state.search}></input><br/>
+                    <input name="search" onChange={this.handleChange} value={this.state.search}></input>
                     <button type="submit">Search</button>
                 </form>
-            </div>
 
+                
+
+            </div>
          );
     }
 }
