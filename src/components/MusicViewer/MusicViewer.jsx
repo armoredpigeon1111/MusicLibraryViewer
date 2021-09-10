@@ -35,6 +35,7 @@ class MusicViewer extends Component {
             <div>
             <SearchSongs songs = {this.state.songs}/>
             <hr/>
+            <h2>All Songs:</h2>
             <table>
                 <thead>
                     <th>Title</th>

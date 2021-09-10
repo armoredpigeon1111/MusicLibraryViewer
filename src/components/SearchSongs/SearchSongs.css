@@ -3,7 +3,7 @@ label{
 }
 
 input{
-    vertical-align: top;
+    margin: 5px;
 }
 
 button{
@@ -11,7 +11,7 @@ button{
 }
 
 body{
-    background-color: rgb(19, 17, 17);
-    color: white;
-    font-family: copperplate, fantasy;
+    background-color: rgb(29, 27, 27);
+    color: rgb(252, 249, 249);
+    
 }
