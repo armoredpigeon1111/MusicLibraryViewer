@@ -62,7 +62,7 @@ class CreateSong extends Component {
                     <input type="datetime-local" name="release_date" onChange={this.handleChange} value={this.state.release_date}></input><br/>
                     <label>Genre:</label>
                     <input name="genre" onChange={this.handleChange} value={this.state.genre}></input><br/>
-                    <button type="submit">Add Song</button>
+                    <button className="newSongButton" type="submit">Add Song</button>
                 </form>   
             </div> 
 

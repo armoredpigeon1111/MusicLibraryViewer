@@ -9,7 +9,7 @@ input{
     margin: 1px;
 }
 
-button{
+.newSongButton {
     margin-top:10px;
     margin-left: 280px;
 }

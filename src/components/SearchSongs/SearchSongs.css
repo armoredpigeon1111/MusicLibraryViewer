@@ -1,15 +1,15 @@
 label{
-    float:left;
-    clear:left;
-    width:100px;
-    margin: 1px;
+ font-weight:bold;
 }
 
 input{
-    margin: 1px;
+    vertical-align: top;
 }
 
 button{
-    margin-top:10px;
-    margin-left: 280px;
+   margin-left: 0px;
+}
+
+body{
+    background-color: rgb(174, 199, 196);
 }
