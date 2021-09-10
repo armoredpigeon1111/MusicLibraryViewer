@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 import MusicViewer from './MusicViewer/MusicViewer';
 import './App.css'
 import CreateSong from './CreateSong/CreateSong';
+import SearchSongs from './SearchSongs/SearchSongs';
 
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-           
+           songs:[]
          }
     }
 
@@ -23,6 +24,7 @@ class App extends Component {
                 <MusicViewer />
                 <hr/>
                 <CreateSong />
+                <SearchSongs />
             </div>
          );
     }

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import './CreateSong.css'
 class CreateSong extends Component {
@@ -20,9 +21,31 @@ class CreateSong extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault();
-        this.props.createSong(this.state)
+        this.createSong(this.state)
     }
 
+    async createSong(){
+        debugger;
+        const song = {
+            title: this.state.title,
+            artist: this.state.artist,
+            album: this.state.album,
+            release_date: this.state.release_date,
+            genre: this.state.genre,
+            likes: 0
+        }
+        try{
+            let response = await axios.post('http://127.0.0.1:8000/music/', song);
+            console.log(response);
+            window.location.reload();
+            
+        }
+        catch{
+            console.log("Unsuccessful Add");
+        }
+        
+        
+    }
 
     render() { 
         return (
@@ -36,7 +59,7 @@ class CreateSong extends Component {
                     <label>Album:</label>
                     <input name="album" onChange={this.handleChange} value={this.state.album}></input><br/>
                     <label>Release Date:</label>
-                    <input name="release_date" onChange={this.handleChange} value={this.state.release_date}></input><br/>
+                    <input type="datetime-local" name="release_date" onChange={this.handleChange} value={this.state.release_date}></input><br/>
                     <label>Genre:</label>
                     <input name="genre" onChange={this.handleChange} value={this.state.genre}></input><br/>
                     <button type="submit">Add Song</button>
