@@ -1,7 +1,6 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import './SearchSongs.css'
-import reactDom from 'react-dom';
+
 
 class SearchSongs extends Component {
     constructor(props) {
@@ -9,14 +8,15 @@ class SearchSongs extends Component {
         this.state = { 
             search: '',
             results: [],
-            songs: props.songs
+            songs: props.songs,
+            submitted: false
          }
     }
 
 
     handleChange = (event) =>{
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value         
         });
      }
  
@@ -31,8 +31,12 @@ class SearchSongs extends Component {
             const results = this.props.songs.filter(song => 
                 song.title.toLowerCase().includes(this.state.search.toLowerCase()) || 
                 song.artist.toLowerCase().includes(this.state.search.toLowerCase()) ||
+                song.album.toLowerCase().includes(this.state.search.toLowerCase()) ||
                 song.genre.toLowerCase().includes(this.state.search.toLowerCase()));
             console.log(results);
+            this.state.results = results;
+            this.state.submitted = true;
+            this.setState({state: this.state});
         }
         catch{
             console.log("unable to search")
@@ -51,7 +55,29 @@ class SearchSongs extends Component {
                     <button type="submit">Search</button>
                 </form>
 
-                
+                {this.state.submitted ? (                    
+                   <table>
+                    <thead>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Release Date</th>
+                        <th>Genre</th>
+                    </thead>
+                    {this.state.results.map((song)=>{
+                        return(
+                            <tr>
+                            <td>{song.title}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.album}</td>
+                            <td>{song.release_date}</td>
+                            <td>{song.genre}</td>
+                         
+                        </tr>   
+                        );
+                    })}
+                </table>
+                ):(console.log("Waiting for Search Term"))}
 
             </div>
          );
