@@ -83,7 +83,7 @@ class MusicViewer extends Component {
                  
                     <UpdateSong songID ={this.state.songID} songs ={this.state.songs}/>
                     
-                ): <div>nothing</div>}
+                ): <div></div>}
             </div>
          );
     }

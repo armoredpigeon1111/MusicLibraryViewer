@@ -6,13 +6,14 @@ class UpdateSong extends Component {
         super(props);
         this.state = { 
             songs: [],
-            songID: '',
+            songID: this.props.songID,
             title: '',
             artist: '',
             album: '',
             release_date: '',
             genre: '',
-            likes: 0
+            likes: 0,
+            firstRun: true
          }
     }
 
@@ -31,6 +32,7 @@ class UpdateSong extends Component {
      populateSong(){
         const results = this.props.songs.filter(song => 
             song.id === this.props.songID);
+            this.songID = results[0].id;
             this.state.title = results[0].title;
             this.state.artist = results[0].artist;
             this.state.album = results[0].album;
@@ -43,6 +45,7 @@ class UpdateSong extends Component {
      async updateSong(){
         debugger;
         const song = {
+            id: this.state.songID,
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,
@@ -51,7 +54,7 @@ class UpdateSong extends Component {
             likes: this.state.likes
         }
         try{
-            let response = await axios.post('http://127.0.0.1:8000/music/', song);
+            let response = await axios.put('http://127.0.0.1:8000/music/'+this.state.songID, song);
             console.log(response);
             window.location.reload();
             
@@ -65,7 +68,11 @@ class UpdateSong extends Component {
 
 
     render() { 
-        this.populateSong();
+        if(this.state.firstRun == true){
+            this.populateSong();
+            this.state.firstRun = false;
+        }
+
 
         return ( 
             <div>
