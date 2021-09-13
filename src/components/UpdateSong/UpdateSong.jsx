@@ -66,7 +66,6 @@ class UpdateSong extends Component {
         
     }
 
-
     render() { 
         if(this.state.firstRun == true){
             this.populateSong();
@@ -89,6 +88,7 @@ class UpdateSong extends Component {
                 <label>Genre:</label>
                 <input name="genre" onChange={this.handleChange} value={this.state.genre}></input><br/>
                 <button className="newSongButton" type="submit">Update Song</button>
+                
             </form>   
         </div>
          );
