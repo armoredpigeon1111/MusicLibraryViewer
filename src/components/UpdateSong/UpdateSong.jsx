@@ -63,7 +63,10 @@ class UpdateSong extends Component {
             console.log("Unsuccessful Add");
         }
         
-        
+    }
+
+    cancelUpdate(){
+        window.location.reload();
     }
 
     render() { 
@@ -87,9 +90,9 @@ class UpdateSong extends Component {
                 <input type="datetime-local" name="release_date" onChange={this.handleChange} value={this.state.release_date}></input><br/>
                 <label>Genre:</label>
                 <input name="genre" onChange={this.handleChange} value={this.state.genre}></input><br/>
-                <button className="newSongButton" type="submit">Update Song</button>
-                
+                <button className="newSongButton" type="submit">Update Song</button>     
             </form>   
+            <button onClick={this.cancelUpdate}>Cancel</button>
         </div>
          );
     }
