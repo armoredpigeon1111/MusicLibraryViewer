@@ -60,7 +60,7 @@ class UpdateSong extends Component {
             
         }
         catch{
-            console.log("Unsuccessful Add");
+            console.log("Unsuccessful update");
         }
         
     }
