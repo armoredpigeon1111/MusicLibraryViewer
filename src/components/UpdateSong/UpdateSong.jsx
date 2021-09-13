@@ -91,8 +91,9 @@ class UpdateSong extends Component {
                 <label>Genre:</label>
                 <input name="genre" onChange={this.handleChange} value={this.state.genre}></input><br/>
                 <button className="newSongButton" type="submit">Update Song</button>     
+                <button type="button" className="cancelButton" onClick={this.cancelUpdate}>Cancel</button>
             </form>   
-            <button onClick={this.cancelUpdate}>Cancel</button>
+            
         </div>
          );
     }
