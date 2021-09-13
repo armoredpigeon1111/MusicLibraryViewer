@@ -1,0 +1,19 @@
+.modal-content{
+    width: 500px;
+    background-color: #fff;
+    color: black;
+}
+
+.modal-header, .modal-footer{
+    padding: 10px;
+}
+
+.modal-title{
+    margin: 0;
+}
+
+.modal-body{
+    padding:10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}

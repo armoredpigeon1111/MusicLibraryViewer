@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './MusicViewer.css'
 import SearchSongs from '../SearchSongs/SearchSongs';
+import { Modal, Button } from 'react-modal';
+import UpdateSong from '../UpdateSong/UpdateSong';
+
 
 class MusicViewer extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            songs: []
+            songs: [],
+            updateStatus: false,
+            songID: '',
+
          }
     }
 
@@ -29,6 +35,19 @@ class MusicViewer extends Component {
         window.location.reload();
 
     }
+
+    updateFormStart(songID){
+        let updateStatus = true;
+        this.setState({
+            songID: songID,
+            updateStatus: true
+        });
+    }
+
+
+
+
+
 
     render() { 
         return ( 
@@ -52,11 +71,19 @@ class MusicViewer extends Component {
                             <td>{song.album}</td>
                             <td>{song.release_date}</td>
                             <td>{song.genre}</td>
-                            <td><button onClick ={()=> this.deleteSong(song.id)}>Delete</button></td>                           
+                            <td><button onClick ={()=> this.deleteSong(song.id)}>Delete</button></td>
+                            <td><button onClick ={()=> this.updateFormStart(song.id)}>Update</button></td>                           
                         </tr>  
                     );
                 })}
             </table>
+
+            {/* Update Form */}
+                {this.state.updateStatus ?(
+                 
+                    <UpdateSong songID ={this.state.songID} songs ={this.state.songs}/>
+                    
+                ): <div>nothing</div>}
             </div>
          );
     }

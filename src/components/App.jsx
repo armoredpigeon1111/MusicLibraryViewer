@@ -1,9 +1,8 @@
-import axios from 'axios';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import MusicViewer from './MusicViewer/MusicViewer';
 import './App.css'
 import CreateSong from './CreateSong/CreateSong';
-import SearchSongs from './SearchSongs/SearchSongs';
+import Modal from './Modal/Modal'
 
 
 class App extends Component {
@@ -17,6 +16,7 @@ class App extends Component {
 
 
     render() { 
+
         return ( 
             <div className="mainBody">
                 <h1 className="head1">Music Library Viewer</h1>
@@ -24,7 +24,6 @@ class App extends Component {
                 <MusicViewer />
                 <hr/>
                 <CreateSong />
-                
             </div>
          );
     }
