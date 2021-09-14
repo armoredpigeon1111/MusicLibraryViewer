@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import axios from "axios";
 import "./MusicViewer.css";
 import SearchSongs from "../SearchSongs/SearchSongs";
-import { Modal, Button } from "react-modal";
 import UpdateSong from "../UpdateSong/UpdateSong";
+import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css'
+
 
 class MusicViewer extends Component {
   constructor(props) {
@@ -12,8 +14,11 @@ class MusicViewer extends Component {
       songs: [],
       updateStatus: false,
       songID: "",
+        openModal: false,
     };
+  
   }
+
 
   componentDidMount() {
     this.getSongs();
@@ -40,7 +45,16 @@ class MusicViewer extends Component {
       updateStatus: true,
     });
   }
-  
+
+//modal
+  onClickButton = e =>{
+      this.setState({openModal: true})
+  }
+
+  onCloseModal = () =>{
+      this.setState({openModal:false})
+  }
+
   render() {
     return (
       <div>
@@ -69,7 +83,7 @@ class MusicViewer extends Component {
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => this.updateFormStart(song.id)}>
+                  <button onClick={() => {this.updateFormStart(song.id); this.onClickButton();}}>
                     Update
                   </button>
                 </td>
@@ -80,7 +94,13 @@ class MusicViewer extends Component {
 
         {/* Update Form */}
         {this.state.updateStatus ? (
-          <UpdateSong songID={this.state.songID} songs={this.state.songs} />
+            <div>
+          {/* <UpdateSong songID={this.state.songID} songs={this.state.songs} /> 
+          <button onClick={this.onClickButton}>Click Me</button> */}
+          <Modal classNames="modal" open={this.state.openModal} onClose={this.onCloseModal}>
+              <UpdateSong songID={this.state.songID} songs={this.state.songs} /> 
+          </Modal>
+          </div>
         ) : (
           <div></div>
         )}

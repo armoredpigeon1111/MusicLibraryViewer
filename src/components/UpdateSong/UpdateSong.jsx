@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './UpdateSong.css'
 
 class UpdateSong extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class UpdateSong extends Component {
       genre: "",
       likes: 0,
       firstRun: true,
+      show: false,
     };
   }
 
@@ -76,7 +78,7 @@ class UpdateSong extends Component {
     }
 
     return (
-      <div>
+      <div className="updateBody">
         <h2>Update Song</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Title:</label>
