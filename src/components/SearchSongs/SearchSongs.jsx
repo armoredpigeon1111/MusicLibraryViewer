@@ -74,16 +74,13 @@ class SearchSongs extends Component {
                             <td>{song.artist}</td>
                             <td>{song.album}</td>
                             <td>{song.release_date}</td>
-                            <td>{song.genre}</td>
-                         
+                            <td>{song.genre}</td>       
                         </tr>   
                         );
                     })}
                 </table>
                 </div>
                 ):(console.log("Waiting for Search Term"))}
-                
-
             </div>
          );
     }
