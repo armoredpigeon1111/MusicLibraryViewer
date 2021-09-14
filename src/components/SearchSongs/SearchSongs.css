@@ -1,5 +1,5 @@
 label{
- 
+ margin-right: 0%;
 }
 
 input{
@@ -11,6 +11,10 @@ input{
     background-color: rgb(15, 160, 58);
     padding: 5px 15px;
     border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: rgb(8, 78, 40);
 }
 
 body{

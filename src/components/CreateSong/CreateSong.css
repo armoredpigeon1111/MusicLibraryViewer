@@ -19,3 +19,7 @@ input{
     padding: 5px 15px;
     border-radius: 10px;
 }
+
+.newSongButton:hover{
+    background-color: rgb(8, 78, 40);
+}
