@@ -99,7 +99,7 @@ class MusicViewer extends Component {
         {this.state.updateStatus ? (
             <div>
           <Modal classNames="modal" open={this.state.openModal} onClose={this.onCloseModal}>
-              <UpdateSong songID={this.state.songID} songs={this.state.songs} /> 
+              <UpdateSong songID={this.state.songID} songs={this.state.songs} />
           </Modal>
           </div>
         ) : (

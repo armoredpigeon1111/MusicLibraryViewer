@@ -69,11 +69,6 @@ class UpdateSong extends Component {
     }
   }
 
-  //Closes Modal and Cancels Update
-  cancelUpdate() {
-    window.location.reload();
-  }
-
   render() {
     if (this.state.firstRun == true) {
       this.populateSong();
@@ -122,13 +117,6 @@ class UpdateSong extends Component {
           <br />
           <button className="newSongButton" type="submit">
             Update Song
-          </button>
-          <button
-            type="button"
-            className="cancelButton"
-            onClick={this.cancelUpdate}
-          >
-            Cancel
           </button>
         </form>
       </div>
