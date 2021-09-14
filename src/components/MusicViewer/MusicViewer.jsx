@@ -81,12 +81,12 @@ class MusicViewer extends Component {
                 <td>{song.release_date}</td>
                 <td>{song.genre}</td>
                 <td>
-                  <button onClick={() => this.deleteSong(song.id)}>
+                  <button className="btn" onClick={() => this.deleteSong(song.id)}>
                     Delete
                   </button>
                 </td>
                 <td>
-                  <button onClick={() => {this.updateFormStart(song.id); this.onClickButton();}}>
+                  <button className="btn" onClick={() => {this.updateFormStart(song.id); this.onClickButton();}}>
                     Update
                   </button>
                 </td>

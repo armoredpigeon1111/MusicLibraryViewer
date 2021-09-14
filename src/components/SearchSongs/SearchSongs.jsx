@@ -53,7 +53,7 @@ class SearchSongs extends Component {
                 <form onSubmit ={this.handleSubmit}>
                     <label>Search:</label>
                     <input name="search" onChange={this.handleChange} value={this.state.search}></input>
-                    <button type="submit">Search</button>
+                    <button className="btn" type="submit">Search</button>
                 </form>
 
                 {this.state.submitted ? (  

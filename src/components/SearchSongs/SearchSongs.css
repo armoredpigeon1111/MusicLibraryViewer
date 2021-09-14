@@ -6,8 +6,11 @@ input{
     margin: 5px;
 }
 
-button{
-   margin-left: 0px;
+.btn{
+    color: white;
+    background-color: rgb(15, 160, 58);
+    padding: 5px 15px;
+    border-radius: 10px;
 }
 
 body{

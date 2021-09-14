@@ -7,9 +7,15 @@ label{
 
 input{
     margin: 1px;
+    width: 250px;
+    border-radius: 5px;
 }
 
 .newSongButton {
     margin-top:10px;
-    margin-left: 280px;
+    margin-left: 270px;
+    color: white;
+    background-color: rgb(15, 160, 58);
+    padding: 5px 15px;
+    border-radius: 10px;
 }
