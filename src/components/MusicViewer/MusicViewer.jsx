@@ -12,9 +12,8 @@ class MusicViewer extends Component {
     super(props);
     this.state = {
       songs: [],
-      updateStatus: false,
       songID: "",
-        openModal: false,
+      openModal: false,
     };
   
   }
@@ -32,7 +31,6 @@ class MusicViewer extends Component {
     });
   }
 
-
   //Deletes Currently Selected Song from Database
   async deleteSong(songID) {
     let response = await axios.delete("http://127.0.0.1:8000/music/" + songID);
@@ -42,10 +40,8 @@ class MusicViewer extends Component {
 
   //Sets Song Data Upon Opening UpdateSong in Modal
   updateFormStart(songID) {
-    let updateStatus = true;
     this.setState({
       songID: songID,
-      updateStatus: true,
     });
   }
 
@@ -94,17 +90,9 @@ class MusicViewer extends Component {
             );
           })}
         </table>
-
-        {/* Update Form Shows on Update Button Click*/}
-        {this.state.updateStatus ? (
-            <div>
-          <Modal classNames="modal" open={this.state.openModal} onClose={this.onCloseModal}>
-              <UpdateSong songID={this.state.songID} songs={this.state.songs} />
-          </Modal>
-          </div>
-        ) : (
-          <div></div>
-        )}
+        <Modal classNames="modal" open={this.state.openModal} onClose={this.onCloseModal}>
+            <UpdateSong songID={this.state.songID} songs={this.state.songs} />
+        </Modal>
       </div>
     );
   }
