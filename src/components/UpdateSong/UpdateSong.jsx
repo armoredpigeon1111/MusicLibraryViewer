@@ -30,6 +30,7 @@ class UpdateSong extends Component {
     this.updateSong(this.state);
   };
 
+  //Populates Song Data
   populateSong() {
     const results = this.props.songs.filter(
       (song) => song.id === this.props.songID
@@ -44,6 +45,7 @@ class UpdateSong extends Component {
     console.log(results[0].title);
   }
 
+  //Updates Existing Song
   async updateSong() {
     debugger;
     const song = {
@@ -67,6 +69,7 @@ class UpdateSong extends Component {
     }
   }
 
+  //Closes Modal and Cancels Update
   cancelUpdate() {
     window.location.reload();
   }

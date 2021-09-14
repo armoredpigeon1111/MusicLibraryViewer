@@ -13,7 +13,6 @@ class SearchSongs extends Component {
          }
     }
 
-
     handleChange = (event) =>{
         this.setState({
             [event.target.name]: event.target.value         
@@ -25,8 +24,8 @@ class SearchSongs extends Component {
          this.searchSongs();
      }
 
+     //Searches Song Data for Matching Criteria
      async searchSongs(){
-
         try{
             const results = this.props.songs.filter(song => 
                 song.title.toLowerCase().includes(this.state.search.toLowerCase()) || 
@@ -41,13 +40,10 @@ class SearchSongs extends Component {
             }else{
                 alert("no results");
             }
-
         }
         catch{
             console.log("unable to search")
-        }
-
-         
+        }      
      }
 
     render() { 

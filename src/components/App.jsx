@@ -1,3 +1,8 @@
+//Title: Music Library Viewer
+//Author: Richard Fleming
+//Create Date: September 10, 2021
+
+
 import React, { Component, useState } from "react";
 import MusicViewer from "./MusicViewer/MusicViewer";
 import "./App.css";

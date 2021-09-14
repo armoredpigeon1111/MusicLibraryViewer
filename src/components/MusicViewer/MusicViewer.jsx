@@ -19,11 +19,11 @@ class MusicViewer extends Component {
   
   }
 
-
   componentDidMount() {
     this.getSongs();
   }
 
+  //Gets All Songs in Database
   async getSongs() {
     let response = await axios.get("http://127.0.0.1:8000/music/");
     console.log(response);
@@ -32,12 +32,15 @@ class MusicViewer extends Component {
     });
   }
 
+
+  //Deletes Currently Selected Song from Database
   async deleteSong(songID) {
     let response = await axios.delete("http://127.0.0.1:8000/music/" + songID);
     console.log(response);
     window.location.reload();
   }
 
+  //Sets Song Data Upon Opening UpdateSong in Modal
   updateFormStart(songID) {
     let updateStatus = true;
     this.setState({
@@ -92,11 +95,9 @@ class MusicViewer extends Component {
           })}
         </table>
 
-        {/* Update Form */}
+        {/* Update Form Shows on Update Button Click*/}
         {this.state.updateStatus ? (
             <div>
-          {/* <UpdateSong songID={this.state.songID} songs={this.state.songs} /> 
-          <button onClick={this.onClickButton}>Click Me</button> */}
           <Modal classNames="modal" open={this.state.openModal} onClose={this.onCloseModal}>
               <UpdateSong songID={this.state.songID} songs={this.state.songs} /> 
           </Modal>

@@ -24,6 +24,7 @@ class CreateSong extends Component {
     this.createSong(this.state);
   };
 
+  //Creates New Song in Database
   async createSong() {
     debugger;
     const song = {
