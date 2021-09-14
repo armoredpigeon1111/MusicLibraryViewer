@@ -19,7 +19,10 @@ class App extends Component {
   render() {
     return (
       <div className="mainBody">
+        <div className="top">
         <h1 className="head1">Music Library Viewer</h1>
+        </div>
+
         <hr />
         <MusicViewer />
         <hr />
