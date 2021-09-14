@@ -17,7 +17,7 @@ input{
     color: white;
     background-color: rgb(15, 160, 58);
     padding: 5px 15px;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .newSongButton:hover{
